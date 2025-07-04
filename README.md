@@ -17,7 +17,6 @@ Percept bundles trimmed or modified versions of several open-source libraries. L
 
 - GLFW (zlib/libpng)
 - Dear ImGui (MIT)
-- OpenAL Soft (LGPL)
 - glad (Public Domain / MIT)
 
 ## Additional Notes
