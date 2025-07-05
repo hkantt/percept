@@ -744,7 +744,7 @@ void bind_imgui_table_flags(py::module_& m) {
         .export_values();
 }
 
-void bind_imgui_table_coloumn_flags(py::module_& m) {
+void bind_imgui_table_column_flags(py::module_& m) {
     py::enum_<ImGuiTableColumnFlags_>(m, "TableColumnFlags", py::arithmetic())
         .value("None_", ImGuiTableColumnFlags_None)
         ENUM_IMGUI_TABLE_COLUMN_FLAGS(Disabled)
