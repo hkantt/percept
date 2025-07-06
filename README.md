@@ -20,5 +20,6 @@ Percept bundles trimmed or modified versions of several open-source libraries. L
 - glad (Public Domain / MIT)
 
 ## Additional Notes
+- Currently, the builds are targeted for Windows 64-bit systems only.
 - Parts of the ImGui bindings were created with the assistance of AI tools. As a result, some features pertaining to ImGui may not yet be thoroughly tested.
-- Linux build support is untested (contributions welcome!)
+- Linux build support is untested.
