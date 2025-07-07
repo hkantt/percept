@@ -37,8 +37,12 @@ target_include_directories(percept PRIVATE
 
 target_link_directories(percept PRIVATE ${GLFW_DIR}/lib ${OPENAL_DIR}/lib)
 
+target_compile_definitions(percept PRIVATE AL_LIBTYPE_STATIC)
+
 # Libraries
 target_link_libraries(percept PRIVATE
+    winmm
+    avrt
     glfw3
     OpenAL32
     opengl32
