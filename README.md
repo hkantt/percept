@@ -6,7 +6,9 @@ Percept is a Python library for multimedia applications powered by GLFW, ImGui, 
 - Install the latest pybind11 module via `pip install pybind11`
 - Open the `percept/` directory through the Visual Studio Developer Command Prompt
 - Run build.bat
-- Copy `release/percept.pyd` and use it in your projects
+- Copy `release/percept.pyd` into your project folder
+- Copy `external/openal/lib/OpenAL32.dll` into the same directory as `release/percept.pyd`
+- `import percept` and use it in your project
 - Inclusion of the LICENSE would be highly appreciated
 
 ## Documentation
