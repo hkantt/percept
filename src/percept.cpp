@@ -2,7 +2,7 @@
 #include "window.h"
 #include "input.h"
 #include "imgui_bindings.h"
-
+#include "oal_bindings.h"
 
 namespace py = pybind11;
 
@@ -39,6 +39,10 @@ PYBIND11_MODULE(percept, m) {
     bind_actions(actions);
     bind_mods(mods);
     scancodes.attr("KEY_UNKNOWN") = GLFW_KEY_UNKNOWN;
+
+    // OpenAL Soft Bindings
+    py::module_ oal = m.def_submodule("oal", "OpenAL Soft bindings");
+    bind_oal(oal);
 
     // ImGui Bindings
     py::module_ imgui = m.def_submodule("imgui", "Dear ImGui bindings");
