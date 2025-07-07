@@ -10,6 +10,7 @@ find_package(pybind11 REQUIRED)
 set(IMGUI_DIR ${CMAKE_SOURCE_DIR}/external/imgui)
 set(GLAD_DIR ${CMAKE_SOURCE_DIR}/external/glad)
 set(GLFW_DIR ${CMAKE_SOURCE_DIR}/external/glfw)
+set(OPENAL_DIR ${CMAKE_SOURCE_DIR}/external/openal)
 
 file(GLOB SRC_FILES ${CMAKE_SOURCE_DIR}/src/*.cpp)
 file(GLOB IMGUI_SOURCES ${IMGUI_DIR}/src/*.cpp)
@@ -30,14 +31,16 @@ target_include_directories(percept PRIVATE
     ${IMGUI_DIR}/include
     ${GLAD_DIR}/include
     ${GLFW_DIR}/include
+    ${OPENAL_DIR}/include
     ${Python3_INCLUDE_DIRS}
 )
 
-target_link_directories(percept PRIVATE ${GLFW_DIR}/lib)
+target_link_directories(percept PRIVATE ${GLFW_DIR}/lib ${OPENAL_DIR}/lib)
 
 # Libraries
 target_link_libraries(percept PRIVATE
     glfw3
+    OpenAL32
     opengl32
     user32 
     gdi32
