@@ -1,3 +1,9 @@
+<div align="center">
+
+[![preview](https://github.com/user-attachments/assets/f2b0e650-4ded-4c9e-9537-1aa70189a3d0)](#readme)
+
+</div>
+
 # Percept
 Percept is a Python library for multimedia applications powered by GLFW, ImGui, and OpenAL Soft.
 
