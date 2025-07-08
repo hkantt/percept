@@ -228,22 +228,6 @@ void OpenALContext::delete_buffer(int buffer) {
     alDeleteBuffers(1, reinterpret_cast<ALuint*>(&buffer));
 }
 
-bool load_ogg(const std::string& filename, std::vector<short>& output, int& channels, int& sample_rate) {
-    int error = 0;
-    stb_vorbis* vorbis = stb_vorbis_open_filename(filename.c_str(), &error, nullptr);
-    if (!vorbis) return false;
-
-    stb_vorbis_info info = stb_vorbis_get_info(vorbis);
-    channels = info.channels;
-    sample_rate = info.sample_rate;
-
-    int samples = stb_vorbis_stream_length_in_samples(vorbis) * channels;
-    output.resize(samples);
-    stb_vorbis_get_samples_short_interleaved(vorbis, channels, output.data(), samples);
-    stb_vorbis_close(vorbis);
-    return true;
-}
-
 void bind_oal(py::module_& m) {
     py::class_<OpenALContext>(m, "Context")
         .def(py::init<>())
